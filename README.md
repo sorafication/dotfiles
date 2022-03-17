@@ -15,7 +15,7 @@ This repository was created as a "bare" repository, so that it can track files f
 
   Setup Alias 
 
-     alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+     alias dotfiles='$(which git) --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 
   Check which files will be changed
@@ -52,6 +52,7 @@ Done.
   Create your alias (and save it to your .zshrc)
     
     alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+  
 
   Configure your Repo 
 
