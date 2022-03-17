@@ -1,0 +1,13 @@
+[core]
+  editor = nvim
+	excludesfile = /Users/wiesner/.gitignore_global
+[color]
+  ui = auto
+
+[user]
+  email = oktavius.wiesner@rtl.de
+  name = Oktavius Wiesner
+[credential]
+	helper = cache
+[init]
+	defaultBranch = main
