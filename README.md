@@ -1,4 +1,6 @@
-# dotfiles
+# dotfiles with chezmoi
+
+Instructions WIP
 
 My dotfiles repository.  
 
