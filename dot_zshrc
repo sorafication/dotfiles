@@ -20,6 +20,8 @@ export no_proxy="*.netrtl.com,.netrtlsrv.com,localhost,127.0.0.1"
 export VAULT_ADDR=https://vault.shared.secrets.prod.da-service.io
 
 
+export XDG_CONFIG_HOME=$HOME/.config
+
 # Source everything else
 source $HOME/.config/zsh/functions --source_only
 source $HOME/.config/zsh/aliases --source_only
