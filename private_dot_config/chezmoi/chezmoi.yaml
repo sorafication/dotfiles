@@ -1,3 +1,8 @@
 git:
   autoPush: true
   autoCommit: true
+
+data:
+  email_private: "git@wiesner.nrw"
+  email_work: "oktavius.wiesner@rtl.de"
+
