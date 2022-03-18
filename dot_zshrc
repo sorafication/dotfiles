@@ -10,13 +10,25 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Path to your oh-my-zsh installation.
+
+# Exports
 export ZSH="$HOME/.oh-my-zsh"
+export EDITOR="nvim"
+export http_proxy=http://meta-proxy.netrtl.com:8080
+export https_proxy=http://meta-proxy.netrtl.com:8080
+export no_proxy="*.netrtl.com,.netrtlsrv.com,localhost,127.0.0.1"
+export VAULT_ADDR=https://vault.shared.secrets.prod.da-service.io
+
+
+# Source everything else
+source $HOME/.config/zsh/functions --source_only
+source $HOME/.config/zsh/aliases --source_only
+
+
 PROMPT_EOL_MARK=''
 bindkey "^[^[[C" forward-word
 bindkey "^[^[[D" backward-word
 
-export EDITOR="nvim"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -40,23 +52,6 @@ source $ZSH/oh-my-zsh.sh
 
 
 #### NEW ZSH CONFIG #####
-source $HOME/.config/zsh/functions --source_only
-source $HOME/.config/zsh/aliases --source_only
-
-alias cdgith="cd /Users/wiesner/Documents/GitHub/"
-alias cdgitl="cd /Users/wiesner/Documents/GitLab/"
-alias wow="git status"
-alias c="code ./"
-alias lg="lazygit"
-alias tf="terraform"
-alias tfa="terraform apply"
-alias tfp="terraform plan"
-alias tfi="terraform init"
-alias ll="ls -lah"
-export http_proxy=http://meta-proxy.netrtl.com:8080
-export https_proxy=http://meta-proxy.netrtl.com:8080
-export no_proxy="*.netrtl.com,.netrtlsrv.com,localhost,127.0.0.1"
-export VAULT_ADDR=https://vault.shared.secrets.prod.da-service.io
 
 
 ### Fix slowness of pastes with zsh-syntax-highlighting.zsh
