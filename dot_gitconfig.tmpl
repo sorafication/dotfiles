@@ -5,7 +5,13 @@
   ui = auto
 
 [user]
+# Work
+{{- if eq .chezmoi.hostname "143302S0" }}
   email = {{ .email_work }}
+{{ else }}
+  email = {{.email_private }}
+{{- end }}
+
   name = Oktavius Wiesner
 [credential]
 	helper = cache
