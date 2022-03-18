@@ -1,11 +1,11 @@
 [core]
   editor = nvim
-	excludesfile = /Users/wiesner/.gitignore_global
+	excludesfile = {{ .chezmoi.homeDir }}/.gitignore_global
 [color]
   ui = auto
 
 [user]
-  email = oktavius.wiesner@rtl.de
+  email = oktavius.{{ .chezmoi.username }}@rtl.de
   name = Oktavius Wiesner
 [credential]
 	helper = cache
