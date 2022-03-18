@@ -1,2 +1,13 @@
-alias dotfiles='$(which git) --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias vim='nvim'
+alias cdgith="cd /Users/wiesner/Documents/GitHub/"
+alias cdgitl="cd /Users/wiesner/Documents/GitLab/"
+alias wow="git status"
+alias c="code ./"
+alias lg="lazygit"
+alias tf="terraform"
+alias tfa="terraform apply"
+alias tfp="terraform plan"
+alias tfi="terraform init"
+alias ll="ls -lah"
+
+
