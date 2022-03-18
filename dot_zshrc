@@ -11,16 +11,19 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 
-# Exports
+# General Exports
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR="nvim"
+export XDG_CONFIG_HOME=$HOME/.config
+
+
+
 export http_proxy=http://meta-proxy.netrtl.com:8080
 export https_proxy=http://meta-proxy.netrtl.com:8080
 export no_proxy="*.netrtl.com,.netrtlsrv.com,localhost,127.0.0.1"
 export VAULT_ADDR=https://vault.shared.secrets.prod.da-service.io
 
 
-export XDG_CONFIG_HOME=$HOME/.config
 
 # Source everything else
 source $HOME/.config/zsh/functions --source_only
