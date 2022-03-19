@@ -1,0 +1,69 @@
+echo "Add function for Random Quotes here"
+
+########## THEME ##########
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+
+
+########## EXPORTS ##########
+export EDITOR="nvim"
+export XDG_CONFIG_HOME=$HOME/.config
+
+########## SOURCE ZSH CONFIGS ##########
+source $HOME/.config/zsh/functions --source_only
+source $HOME/.config/zsh/aliases --source_only
+source $HOME/.config/zsh/lscolors.sh
+source $HOME/.config/zsh/config --source_only # Additional Config like keybindings or completion
+
+
+
+########## MANAGE PLUGINS WITH zsh_unplugged ##########
+# where do you want to store your plugins?
+ZPLUGINDIR=${ZPLUGINDIR:-${ZDOTDIR:-$HOME/.config/zsh}/plugins}
+
+# get zsh_unplugged and store it with your other plugins
+if [[ ! -d $ZPLUGINDIR/zsh_unplugged ]]; then
+  git clone --quiet https://github.com/mattmc3/zsh_unplugged $ZPLUGINDIR/zsh_unplugged
+fi
+source $ZPLUGINDIR/zsh_unplugged/zsh_unplugged.plugin.zsh
+
+# make list of the Zsh plugins you use
+repos=(
+  # plugins that you want loaded first
+#x  sindresorhus/pure
+  romkatv/powerlevel10k 
+
+  # other plugins
+  Aloxaf/fzf-tab
+  #zsh-users/zsh-completions
+  #rupa/z
+  # ...
+
+  # plugins you want loaded last
+ # b4b4r07/enhancd
+  zsh-users/zsh-autosuggestions
+  zsh-users/zsh-syntax-highlighting
+)
+
+# now load your plugins
+plugin-load $repos
+
+
+
+########## Tab Completion for Cloud Provider ##########
+source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc" # Add completion for gcloud commands
+complete -C '/usr/local/bin/aws_completer' aws
+
+
+########## P10k THEME CONFIG #########
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+########## FZF COMPLETION AND KEYBINDINGS ##########
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
