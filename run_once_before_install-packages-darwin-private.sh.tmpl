@@ -1,0 +1,19 @@
+{{- if eq .chezmoi.username "oktavius_wiesner" -}}
+#!/bin/bash
+
+brew bundle --no-lock --file=/dev/stdin <<EOF
+
+  cask "altserver"
+  cask "tinymediamanager"
+  cask "parallels"
+  cask "jdownloader"
+  cask "balenaetcher"
+
+
+EOF
+
+mas install 824183456  # Affinity Photo
+mas install 1136220934 # Infuse 7
+mas install 953286746  # Darkroom: Foto- & Video-Editor
+mas install 1511416593 # JoyKeyMapper
+{{ end -}}

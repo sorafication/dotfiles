@@ -1,0 +1,23 @@
+{{- if eq .chezmoi.hostname "143302S0" -}}
+#!/bin/bash
+
+brew bundle --no-lock --file=/dev/stdin <<EOF
+  brew "cookiecutter"
+  brew "azure-cli"
+  brew "terraform"
+  brew "terragrunt"
+  brew "vault"
+
+  cask "drawio"
+  cask "microsoft-teams"
+  cask "docker"
+  cask "zoom"
+
+EOF
+
+mas install 462054704 # Microsoft Word
+mas install 1295203466 # Microsoft Remote Desktop
+mas install 985367838 # Outlook
+
+echo "Hey, do not forget dato: https://sindresorhus.com/dato"
+{{ end -}}
