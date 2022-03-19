@@ -14,10 +14,10 @@ alias tfi="terraform init"
 
 {{- if eq .chezmoi.hostname "143302S0" }}
 #INTEL MAC ALIAS
-alias ls="/usr/local/opt/coreutils/libexec/gnubin/ls - l --color=auto"
+alias ls="/usr/local/opt/coreutils/libexec/gnubin/ls -l --color=auto"
 {{ else }}
 # MAKE AN ALIAS FOR M1 MAC
-alias ls="/opt/homebrew/opt/coreutils/libexec/gnubin/ls-l --color=auto"
+alias ls="/opt/homebrew/opt/coreutils/libexec/gnubin/ls -l --color=auto"
 {{- end }}
 
 alias ll="ls -lah --color=auto"
