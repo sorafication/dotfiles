@@ -78,9 +78,5 @@ mas install 409183694  # Keynote
 mas install 409203825  # Numbers
 mas install 409201541  # Pages
 
-printf '\nSet Forklift as default finder...\n'
-defaults write -g NSFileViewer -string com.binarynights.ForkLift-3;
-defaults write com.apple.LaunchServices/com.apple.launchservices.secure LSHandlers -array-add '{LSHandlerContentType="public.folder";LSHandlerRoleAll="com.binarynights.ForkLift-3";}'
-
 
 {{ end -}}

@@ -1,0 +1,16 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+
+printf '\nSet some default configs only once...\n'
+
+printf '\nSet Forklift as default finder...\n'
+
+defaults write -g NSFileViewer -string com.binarynights.ForkLift-3;
+defaults write com.apple.LaunchServices/com.apple.launchservices.secure LSHandlers -array-add '{LSHandlerContentType="public.folder";LSHandlerRoleAll="com.binarynights.ForkLift-3";}'
+
+
+printf '\nEnable fzf keybindungs and autocompletion for mac...\n'
+$(brew --prefix)/opt/fzf/install
+
+{{ end -}}
