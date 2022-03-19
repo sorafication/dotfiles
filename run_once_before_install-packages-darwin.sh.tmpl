@@ -1,0 +1,61 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+brew bundle --no-lock --file=/dev/stdin <<EOF
+  brew "awscli"
+  brew "azure-cli"
+  brew "chezmoi"
+  brew "cookiecutter"
+  brew "coreutils"
+  brew "exa"
+  brew "fd"
+  brew "fzf"
+  brew "gnupg"
+  brew "helm"
+  brew "htop"
+  brew "jq"
+  brew "k9s"
+  brew "kubernetes-cli"
+  brew "lazygit"
+  brew "mas"
+  brew "ncdu"
+  brew "neovim"
+  brew "node"
+  brew "ripgrep"
+  brew "stylua"
+  brew "telnet"
+  brew "terragrunt"
+  brew "tmux"
+  brew "tree"
+  brew "vault"
+  brew "wget"
+  brew "yq"
+  brew "rclone"
+
+  cask "docker"
+  cask "google-cloud-sdk"
+  cask "1password-cli"
+  cask "1password"
+  cask "microsoft-edge"
+  cask "monitorcontrol"
+  cask "keka"
+  cask "iterm2"
+  cask "keepingyouawake"
+  cask "discord"
+  cask "visual-studio-code"
+  cask "vlc"
+  cask "shottr"
+  cask "forklift"
+  cask "raycast"
+
+{{- if eq .chezmoi.hostname "143302S0" -}}
+# ONLY INSTALL ON WORK LAPTOP
+
+  cask "microsoft-teams"
+
+{{ end -}}
+
+
+
+EOF
+{{ end -}}
