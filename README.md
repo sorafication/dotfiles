@@ -9,6 +9,14 @@ For a new iTerm2 setup open iTerm2 --> Preferences --> General --> Preferences a
 Select the folder where your config file is and restart iTerm.
 
 
+# Raycast Configuration
+
+Raycast has a lot of custom config like global hotkeys for window management.
+To export your current config open Raycast and choose 'Export Preferences & Data'.
+Importing can be done via 'Import Preferences & Data'.
+
+A current version of my own backup file is stored in personal cloud folder.
+
 # How to edit new apps/homebrew packages
 
 Go to your source directory of chezmoi and edit the corresponding 'run_once_*' file.
