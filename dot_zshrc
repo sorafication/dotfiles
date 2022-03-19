@@ -66,4 +66,5 @@ complete -C "$(which aws_completer)" aws
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 ########## FZF COMPLETION AND KEYBINDINGS ##########
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
