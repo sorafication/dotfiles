@@ -1,0 +1,31 @@
+# Allow to scroll through items with ALT and Arrows
+PROMPT_EOL_MARK=''
+bindkey "^[^[[C" forward-word
+bindkey "^[^[[D" backward-word
+
+
+
+
+# Enable Zsh Completion System (needed for fzf-tab)
+autoload -U compinit; compinit
+
+
+########## fzf-tab specific configs ##########
+# fzf-tab module, only build it once
+#Source: https://github.com/Aloxaf/fzf-tab#binary-module
+if [[ -f "${ZDOTDIR}/plugins/fzf-tab/modules/config.h.in" ]]; then
+  [[ ! -f "${ZDOTDIR}/plugins/fzf-tab/modules/config.h" ]] && build-fzf-tab-module
+fi
+
+# disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+# set descriptions format to enable group support
+zstyle ':completion:*:descriptions' format '[%d]'
+# preview directory's content with exa when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+#Show content of files
+zstyle ':fzf-tab:complete:*:*' fzf-preview 'less ${(Q)realpath}'
+# switch group using `,` and `.`
+zstyle ':fzf-tab:*' switch-group ',' '.'
+# set list-colors to enable filename colorizing
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
