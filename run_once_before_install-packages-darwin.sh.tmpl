@@ -1,6 +1,19 @@
 {{- if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
 
+
+# If Homebrew is not installed on the system, it will be installed here
+if test ! $(which brew); then
+   printf '\n\n\e[33mHomebrew not found. \e[0mInstalling Homebrew...'
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+else
+  printf '\n\n\e[0mHomebrew found. Continuing...'
+fi
+
+printf '\nInstalling Brew packages and casks...\n'
+
+brew tap homebrew/cask-fonts
+
 brew bundle --no-lock --file=/dev/stdin <<EOF
   brew "awscli"
   brew "chezmoi"
@@ -29,11 +42,13 @@ brew bundle --no-lock --file=/dev/stdin <<EOF
   brew "rclone"
 
   cask "google-cloud-sdk"
+  cask "font-hack-nerd-font"
   cask "1password-cli"
   cask "1password"
   cask "microsoft-edge"
   cask "monitorcontrol"
   cask "keka"
+  cask "hyper"
   cask "iterm2"
   cask "keepingyouawake"
   cask "discord"
@@ -48,6 +63,8 @@ brew bundle --no-lock --file=/dev/stdin <<EOF
 
 EOF
 
+
+printf '\nInstalling MacAppStore apps...\n'
 mas install 1592844577 # Neo Noir
 mas install 1166066070 # Bumpr
 mas install 497799835  # XCode
@@ -56,5 +73,14 @@ mas install 1147396723 # WhatApp
 mas install 1091189122 # Bear
 mas install 1591303229 # Vingear
 mas install 1440147259 # AdGuard for Safari
-mas install 1601151613 # Baking Soda 
+mas install 1601151613 # Baking Soda
+mas install 409183694  # Keynote
+mas install 409203825  # Numbers
+mas install 409201541  # Pages
+
+printf '\nSet Forklift as default finder...\n'
+defaults write -g NSFileViewer -string com.binarynights.ForkLift-3;
+defaults write com.apple.LaunchServices/com.apple.launchservices.secure LSHandlers -array-add '{LSHandlerContentType="public.folder";LSHandlerRoleAll="com.binarynights.ForkLift-3";}'
+
+
 {{ end -}}
