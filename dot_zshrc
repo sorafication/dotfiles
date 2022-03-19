@@ -58,8 +58,8 @@ plugin-load $repos
 
 ########## Tab Completion for Cloud Provider ##########
 source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc" # Add completion for gcloud commands
+#complete -C "/opt/homebrew/bin/aws_completer" aws
 complete -C "$(which aws_completer)" aws
-complete -C "/opt/homebrew/bin/aws_completer" aws
 
 ########## P10k THEME CONFIG #########
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
