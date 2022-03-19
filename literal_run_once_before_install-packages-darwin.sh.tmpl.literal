@@ -22,7 +22,6 @@ PACKAGES=(
   mas
   ncdu
   neovim
-  nghttp2
   node
   pre-commit
   python@3.8
