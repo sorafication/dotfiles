@@ -87,6 +87,7 @@ return packer.startup(function(use)
 
  -- Telescope Extensions
   use "ANGkeith/telescope-terraform-doc.nvim"
+
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
