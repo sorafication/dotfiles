@@ -8,6 +8,6 @@ require("user.lsp.handlers").setup()
 require "user.lsp.null-ls"
 require 'lspconfig'.terraformls.setup{}
 require "user.lsp.settings.terraform"
-require('telescope').load_extension('terraform-doc')
+-- require('telescope').load_extension('terraform-doc')
 
 
