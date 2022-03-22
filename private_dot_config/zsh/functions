@@ -14,3 +14,7 @@ function plugin-update {
     command git -C "${d:h}" pull --ff --recurse-submodules --depth 1 --rebase --autostash
   done
 }
+
+randomquotes(FILE){
+    shuf -n 1 $FILE
+  }
