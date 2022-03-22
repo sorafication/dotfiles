@@ -1,5 +1,4 @@
-echo "Add function for Random Quotes here"
-
+shuf -n 1 $HOME/.config/zsh/quotes.txt
 ########## THEME ##########
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
