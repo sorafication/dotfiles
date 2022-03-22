@@ -1,3 +1,4 @@
+echo "Ron Swanson: "
 shuf -n 1 $HOME/.config/zsh/quotes.txt
 ########## THEME ##########
 
