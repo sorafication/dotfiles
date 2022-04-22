@@ -1,0 +1,13 @@
+plugin:
+  deleteContext:
+    shortCut: Ctrl-D
+    confirm: true
+    description: Delete kubectl context
+    scopes:
+    - contexts
+    command: kubectl
+    background: true
+    args:
+    - config
+    - delete-context
+    - $NAME
