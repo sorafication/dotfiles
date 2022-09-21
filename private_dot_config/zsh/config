@@ -3,7 +3,8 @@ PROMPT_EOL_MARK=''
 bindkey "^[^[[C" forward-word
 bindkey "^[^[[D" backward-word
 
-
+# Make backspace in ssh vms working with Kitty
+export TERM=xterm-256color
 
 
 # Enable Zsh Completion System (needed for fzf-tab)
