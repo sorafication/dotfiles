@@ -20,6 +20,11 @@ lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.builtin["terminal"].open_mapping = [[<c-ö>]]
+lvim.builtin["terminal"].execs = {
+      { vim.o.shell, "<C-ä>", "Horizontal Terminal", "horizontal", 15 },
+      { vim.o.shell, "<C-ü>", "Vertical Terminal", "vertical", 60 },
+      { vim.o.shell, "<C-#>", "Float Terminal", "float", nil },
+    }
 
 -- lvim.keys.normal_mode["œ"] = "<Cmd>execute v:count . 'ToggleTerm'<CR>"
 -- lvim.keys.insert_mode["<C-ä>"] = "<ESC><CMD>ToggleTerm<CR>"
