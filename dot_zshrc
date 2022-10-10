@@ -22,7 +22,8 @@ source $HOME/.config/zsh/aliases --source_only
 source $HOME/.config/zsh/lscolors.sh
 source $HOME/.config/zsh/config --source_only # Additional Config like keybindings or completion
 
-
+# Kubectl autosuggestions
+source <(kubectl completion zsh)
 
 ########## MANAGE PLUGINS WITH zsh_unplugged ##########
 # where do you want to store your plugins?
