@@ -40,7 +40,7 @@ source $ZPLUGINDIR/zsh_unplugged/zsh_unplugged.zsh
 repos=(
   # plugins that you want loaded first
 #x  sindresorhus/pure
-  romkatv/powerlevel10k 
+  # romkatv/powerlevel10k 
 
   # other plugins
   Aloxaf/fzf-tab
