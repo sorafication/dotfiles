@@ -26,11 +26,17 @@ lvim.builtin["terminal"].execs = {
       { vim.o.shell, "<C-#>", "Float Terminal", "float", nil },
     }
 
+-- Navigate buffers
+-- keymap("n", "<S-l>", ":bnext<CR>", opts)
+-- keymap("n", "<S-h>", ":bprevious<CR>", opts)
+
+
+
 -- lvim.keys.normal_mode["œ"] = "<Cmd>execute v:count . 'ToggleTerm'<CR>"
 -- lvim.keys.insert_mode["<C-ä>"] = "<ESC><CMD>ToggleTerm<CR>"
 
--- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
--- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
+lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- unmap a default keymapping
 -- vim.keymap.del("n", "<C-Up>")
 -- override a default keymapping
