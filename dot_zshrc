@@ -53,7 +53,7 @@ repos=(
 #  jeffreytse/zsh-vi-mode
   zsh-users/zsh-autosuggestions
   zsh-users/zsh-syntax-highlighting
-  spaceship-prompt/spaceship-prompt
+  # spaceship-prompt/spaceship-prompt
 )
 
 # now load your plugins
