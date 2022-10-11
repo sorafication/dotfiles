@@ -58,4 +58,4 @@ complete -C "$(which aws_completer)" aws
 
 ########## FZF COMPLETION AND KEYBINDINGS ##########
 zvm_after_init_commands+=('[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh')
-#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
