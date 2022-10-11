@@ -16,7 +16,7 @@ shuf -n 1 $HOME/.config/zsh/quotes.txt
 export EDITOR="lvim"
 export XDG_CONFIG_HOME=$HOME/.config
 export PATH=$HOME/.local/bin:$PATH
-export STARSHIP_CONFIG=~.config/starship/starship.toml
+export STARSHIP_CONFIG=.config/starship/starship.toml
 
 
 ########## SOURCE ZSH CONFIGS ##########
