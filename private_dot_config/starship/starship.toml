@@ -103,7 +103,6 @@ style = "bold yellow"
 repo_root_style = "bold yellow"
 
 
-{{- if eq .chezmoi.hostname "162579s0" }}
 # Set a proxy_status variable so that the output only shows the status instead of the proxy address 
 [env_var]
 disabled = false
@@ -111,7 +110,6 @@ variable = "proxy_status"
 default = "DISABLED"
 format = " with Proxy [$env_value]($style) " 
 style = "purple bold"
-{{- end}}
 
 # CLOUD STUFF
 # Disable for now as it is not showing current aws account due to aws sso usage
