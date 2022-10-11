@@ -128,11 +128,14 @@ disabled = true
 symbol = "ﴃ " 
 format = ' on [$symbol(\($subscription\))]($style)'
 
+
+{{- if eq .chezmoi.hostname "162579s0" }}
 [gcloud]
 disabled = false
 symbol = " " 
 format = 'on [$symbol(\($project\))]($style)'
 style =  "bold green"
+{{- end}}
 
 
 # GIT STUFF
