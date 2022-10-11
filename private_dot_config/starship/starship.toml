@@ -1,0 +1,179 @@
+# TO SEE ALL AVAILABLE OPTIONS CHECK OUT: https://starship.rs/config/
+
+# Move Directory to first place. For this all available options needs to be set.
+# Which is equivalent to
+format = """
+$username\
+$hostname\
+$localip\
+$shlvl\
+$singularity\
+$directory\
+$vcsh\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$kubernetes\
+$hg_branch\
+$docker_context\
+$package\
+$c\
+$cmake\
+$cobol\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$haskell\
+$helm\
+$java\
+$julia\
+$kotlin\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$raku\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$swift\
+$terraform\
+$vlang\
+$vagrant\
+$zig\
+$buf\
+$nix_shell\
+$conda\
+$spack\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$azure\
+$env_var\
+$crystal\
+$custom\
+$sudo\
+$cmd_duration\
+$line_break\
+$jobs\
+$battery\
+$time\
+$status\
+$container\
+$shell\
+$character"""
+
+
+# GENERAL STUFF
+# Inserts a blank line between shell prompts
+add_newline = true
+# Move the directory to the second line
+# format = "$all$directory$character"
+
+[character]
+disabled = false
+error_symbol = "[✗](bold red) "
+
+[cmd_duration]
+disabled = false
+min_time = 2_000
+format = "took [$duration]($style) "
+
+[directory]
+disabled = false
+truncation_length = 6
+truncate_to_repo = true
+truncation_symbol = "…/"
+style = "bold yellow"
+repo_root_style = "bold yellow"
+
+# Set a proxy_status variable so that the output only shows the status instead of the proxy address 
+[env_var]
+disabled = false
+variable = "proxy_status"
+default = "DISABLED"
+format = " with Proxy [$env_value]($style) " 
+style = "purple bold"
+
+
+# CLOUD STUFF
+# Disable for now as it is not showing current aws account due to aws sso usage
+[aws]
+disabled = true 
+format = "on [$symbol$profile]($style) "
+style = "bold yellow"
+symbol = " "
+[aws.profile_aliases]
+Enterprise_Naming_Scheme-voidstars = 'void**'
+
+[azure]
+disabled = true
+symbol = "ﴃ " 
+format = ' on [$symbol(\($subscription\))]($style)'
+
+[gcloud]
+disabled = false
+symbol = " " 
+format = 'on [$symbol(\($project\))]($style)'
+style =  "bold green"
+
+
+# GIT STUFF
+[git_branch]
+disabled = false
+symbol = "🌱 "
+format = "on [$symbol$branch(:$remote_branch)]($style) "
+style = "bold purple"
+truncation_length = 9223372036854775807
+truncation_symbol = "…"
+
+[git_commit]
+disabled = false
+style = "green bold"
+commit_hash_length = 7
+
+[git_state]
+disabled = false
+
+[git_metrics]
+disabled = false 
+added_style = "bold green"
+format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
+
+[git_status]
+disabled = false
+
+[helm]
+disabled = true
+
+[hostname]
+disabled = false
+
+[kubernetes]
+disabled = false 
+# detect_files = ['tf']
+format = 'with [☸ $context ](dimmed yellow) '
+[kubernetes.context_aliases]
+#only show gcp project name without latest suffix
+# -.* is the suffix that should not be displayed
+# _.* is the region that should not be displayed
+# latest _.* is the cluster that should not be displayed
+"gke_(?P<var_project>[\\w-]+)-.*_.*_.*" = "gke in: $var_project"
+
+[terraform]
+disabled = true
