@@ -21,8 +21,8 @@ alias cat="bat"
 {{- if eq .chezmoi.hostname "162579s0" }}
 #INTEL MAC ALIAS
 alias ls="/opt/homebrew/opt/coreutils/libexec/gnubin/ls -l --color=auto"
-alias up='export http_proxy=http://meta-proxy.netrtl.com:8080 https_proxy=http://meta-proxy.netrtl.com:8080 no_proxy="*.netrtl.com,.netrtlsrv.com,localhost,127.0.0.1" VAULT_ADDR=https://vault.shared.secrets.prod.da-service.io proxy_status="ON"'
-alias upp='unset http_proxy https_proxy no_proxy VAULT_ADDR proxy_status="OFF"'
+alias up='export http_proxy=http://meta-proxy.netrtl.com:8080 https_proxy=http://meta-proxy.netrtl.com:8080 no_proxy="*.netrtl.com,.netrtlsrv.com,localhost,127.0.0.1" VAULT_ADDR=https://vault.shared.secrets.prod.da-service.io proxy_status="ACTIVE"'
+alias upp='unset http_proxy https_proxy no_proxy VAULT_ADDR proxy_status'
 
 {{ else }}
 # MAKE AN ALIAS FOR M1 MAC
