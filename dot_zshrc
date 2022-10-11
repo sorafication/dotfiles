@@ -61,9 +61,7 @@ plugin-load $repos
 
 
 #THEME
-
-source "$(brew --prefix)/opt/spaceship/spaceship.zsh"
-
+eval "$(starship init zsh)"
 
 ########## Tab Completion for Cloud Provider ##########
 source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc" # Add completion for gcloud commands
