@@ -39,7 +39,7 @@ repos=(
   # ...
 
   # plugins you want loaded last
- # b4b4r07/enhancd
+  b4b4r07/enhancd
 #  jeffreytse/zsh-vi-mode
   zsh-users/zsh-autosuggestions
   zsh-users/zsh-syntax-highlighting
