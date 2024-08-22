@@ -18,7 +18,6 @@ brew bundle --no-lock --file=/dev/stdin <<EOF
   brew "awscli"
   brew "chezmoi"
   brew "coreutils"
-  brew "exa"
   brew "fd"
   brew "fzf"
   brew "gnupg"
@@ -43,6 +42,7 @@ brew bundle --no-lock --file=/dev/stdin <<EOF
   brew "bat"
   brew "httpie"
   brew "starship"
+  brew "jordanbaird-ice"
 
   cask "google-cloud-sdk"
   cask "font-hack-nerd-font"
@@ -55,33 +55,33 @@ brew bundle --no-lock --file=/dev/stdin <<EOF
   cask "visual-studio-code"
   cask "vlc"
   cask "shottr"
-  cask "forklift"
   cask "raycast"
   cask "fantastical"
-  cask "raindropio"
-  cask "bartender"
-  cask "maccy"
-  cask "alt-tab"
   cask "iterm2"
+  cask "anytype"
+  cask "multitouch"
+  cask "bettermouse"
+  cask "synology-drive"
+  cask "todoist"
 EOF
 
 
 printf '\nInstalling MacAppStore apps...\n'
-mas install 1592917505 # Neo Noir
 mas install 497799835  # XCode
-mas install 688211836  # EasyRes
-mas install 1147396723 # WhatApp
-mas install 1591303229 # Vingear
-mas install 1601151613 # Baking Soda
+mas install 310633997  # WhatApp
 mas install 409183694  # Keynote
 mas install 409203825  # Numbers
 mas install 409201541  # Pages
 mas install 1474335294 # GoodLinks
-mas install 1032670789 # News Explorer
-mas install 1320666476 # Wipr
-mas install 1607635845 # Velja
-mas install 1440147259 # AdGuard for Safari
 mas install 1529448980 # Reeder 5
-mas install 1596283165 # Rcmd
 mas install 430798174  # HazeOver
+
+printf '\nInstalling Safari Extensions...\n'
+mas install 1579902068 # xSearch for Safari
+mas install 1607635845 # Velja
+mas install 1320666476 # Wipr
+mas install 1592917505 # Neo Noir
+mas install 1591303229 # Vingear
+mas install 1601151613 # Baking Soda
+mas install 1573461917 # SponsorBlock für YouTube
 {{ end -}}
