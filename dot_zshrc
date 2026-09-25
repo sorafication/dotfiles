@@ -13,7 +13,10 @@ export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 source $HOME/.config/zsh/functions --source_only
 source $HOME/.config/zsh/aliases --source_only
 source $HOME/.config/zsh/lscolors.sh
+source $HOME/.config/zsh/ai --source_only
 source $HOME/.config/zsh/config --source_only # Additional Config like keybindings or completion
+# Work machine only (see .chezmoiignore); guarded so it is a no-op elsewhere.
+[[ -r $HOME/.config/zsh/gitlab ]] && source $HOME/.config/zsh/gitlab --source_only
 
 # Kubectl autosuggestions
 source <(kubectl completion zsh)
